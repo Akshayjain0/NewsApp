@@ -2,4 +2,5 @@
 
 # dependencies
 node_modules
-.env.locol
+.env.local
+build

@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 
 class App extends Component {
-  apiKey = "Enter Your API-KEY HERE";
+  apiKey = process.env.REACT_APP_NEWS_API;
 
   state = {
     progress: 0
