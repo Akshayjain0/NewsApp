@@ -3,19 +3,14 @@ import NavBar from './Components/NavBar';
 import News from './Components/News';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
-// require('react-dotenv').config();
-const  {REACT_APP_NEWS_API} = process.env
-console.log(REACT_APP_NEWS_API)
-// const api  = process.env.REACT_APP_NEWS_API
-// console.log(api)
 
 class App extends Component {
-  apiKey ="Enter Your API-KEY HERE";
-  
+  apiKey = "Enter Your API-KEY HERE";
+
   state = {
     progress: 0
   }
-  setProgress =(progress)=>{
+  setProgress = (progress) => {
     this.setState({ progress: progress })
   }
   render() {
@@ -23,7 +18,7 @@ class App extends Component {
       <>
         <BrowserRouter>
           <LoadingBar
-          height={1.8}
+            height={1.8}
             color='#f11920'
             progress={this.state.progress}
           />
