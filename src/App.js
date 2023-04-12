@@ -3,10 +3,15 @@ import NavBar from './Components/NavBar';
 import News from './Components/News';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
-
+// require('react-dotenv').config();
+const  {REACT_APP_NEWS_API} = process.env
+console.log(REACT_APP_NEWS_API)
+// const api  = process.env.REACT_APP_NEWS_API
+// console.log(api)
 
 class App extends Component {
-  apiKey ="b5b5858a2f40497ca535cb7509577183";
+  apiKey ="Enter Your API-KEY HERE";
+  
   state = {
     progress: 0
   }
@@ -24,7 +29,7 @@ class App extends Component {
           />
           <NavBar />
           <Routes>
-            <Route path='/' element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={5} country="in" category="general" />} />
+            <Route path='/NewsApp' element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={5} country="in" category="general" />} />
             <Route path='/business' element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="business" pageSize={5} country="in" category="business" />} />
             <Route path='/entertainment' element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="entertainment" pageSize={5} country="in" category="entertainment" />} />
             <Route path='/general' element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={5} country="in" category="general" />} />
